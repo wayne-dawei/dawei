@@ -8,7 +8,7 @@
 
   <meta
     name="description"
-    content="NovaTech 提供企業網站、數位產品與客製化系統開發服務。"
+    content="NovaTech 是專注於網站開發、數位產品與客製化 Web 系統的獨立數位工作室。"
   >
 
   <style>
@@ -376,6 +376,109 @@
       line-height: 1.8;
     }
 
+
+
+    /* =========================================================
+       PRICING
+    ========================================================= */
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .pricing-card {
+      position: relative;
+      padding: 38px 32px;
+      min-height: 390px;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,0.035),
+          rgba(255,255,255,0.008)
+        );
+      transition: 0.4s;
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(255,255,255,0.2);
+    }
+
+    .pricing-card.featured {
+      border-color: rgba(255,255,255,0.24);
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,0.07),
+          rgba(255,255,255,0.012)
+        );
+    }
+
+    .pricing-badge {
+      display: inline-block;
+      margin-bottom: 22px;
+      padding: 5px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.13);
+      color: #aaa;
+      font-size: 10px;
+      letter-spacing: 1.5px;
+    }
+
+    .pricing-card h3 {
+      font-size: 27px;
+      margin-bottom: 10px;
+    }
+
+    .pricing-description {
+      min-height: 55px;
+      color: #777;
+      line-height: 1.7;
+      font-size: 14px;
+      margin-bottom: 25px;
+    }
+
+    .pricing-price {
+      font-size: 34px;
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      margin-bottom: 22px;
+    }
+
+    .pricing-price span {
+      color: #777;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0;
+    }
+
+    .pricing-list {
+      list-style: none;
+      margin-bottom: 28px;
+    }
+
+    .pricing-list li {
+      position: relative;
+      padding-left: 18px;
+      margin-bottom: 10px;
+      color: #999;
+      font-size: 13px;
+    }
+
+    .pricing-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #ddd;
+    }
+
+    .pricing-card .btn {
+      width: 100%;
+    }
 
     /* =========================================================
        PROJECTS
@@ -1580,6 +1683,10 @@
         grid-template-columns: 1fr;
       }
 
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+
       .projects-grid {
         grid-template-columns: 1fr;
       }
@@ -1740,6 +1847,10 @@
       </li>
 
       <li>
+        <a href="#pricing">Pricing</a>
+      </li>
+
+      <li>
         <a href="#projects">Projects</a>
       </li>
 
@@ -1771,8 +1882,8 @@
       </h1>
 
       <p class="hero-description">
-        我們透過網站設計、數位產品與客製化系統，
-        幫助企業建立更好的數位體驗。
+        我透過網站設計、數位產品與客製化系統，
+        協助品牌與企業建立更好的數位體驗。
       </p>
 
       <div class="buttons">
@@ -1825,8 +1936,8 @@
       <div>
 
         <p class="about-text">
-          NovaTech 是一個專注於數位體驗的概念型科技團隊。
-          我們相信好的數位產品不只是「看起來漂亮」，
+          NovaTech 是一個專注於網站開發與數位體驗的獨立數位工作室。
+          我相信好的數位產品不只是「看起來漂亮」，
           更應該讓使用者更容易理解、更容易操作，
           同時幫助企業提升品牌價值與效率。
         </p>
@@ -1925,6 +2036,122 @@
 
 
 
+
+  <!-- =========================================================
+       PRICING
+  ========================================================= -->
+
+  <section id="pricing">
+
+    <div class="section-header">
+
+      <div class="tag">
+        STARTING PRICES
+      </div>
+
+      <h2>
+        透明的方案<br>
+        <span style="color:#626262;">從需求開始報價。</span>
+      </h2>
+
+      <p class="about-text" style="max-width:720px; margin-top:25px;">
+        以下為目前接案的起始方案，實際價格會依頁面數量、功能複雜度與客製需求調整。
+        如果你已經有明確需求，也可以直接聯絡我討論。
+      </p>
+
+    </div>
+
+    <div class="pricing-grid">
+
+      <div class="pricing-card">
+
+        <div class="pricing-badge">STARTER</div>
+
+        <h3>入門形象網站</h3>
+
+        <p class="pricing-description">
+          適合個人品牌、小型商家與需要建立線上門面的企業。
+        </p>
+
+        <div class="pricing-price">
+          NT$8,000 <span>起</span>
+        </div>
+
+        <ul class="pricing-list">
+          <li>響應式網站設計</li>
+          <li>首頁與基本內容頁</li>
+          <li>品牌資訊與聯絡方式</li>
+          <li>手機／平板／桌機適配</li>
+        </ul>
+
+        <a href="#contact" class="btn btn-secondary">
+          詢問方案 →
+        </a>
+
+      </div>
+
+
+      <div class="pricing-card featured">
+
+        <div class="pricing-badge">MOST POPULAR</div>
+
+        <h3>專業企業網站</h3>
+
+        <p class="pricing-description">
+          適合希望提升品牌形象、展示服務並持續取得客戶的企業。
+        </p>
+
+        <div class="pricing-price">
+          NT$15,000 <span>起</span>
+        </div>
+
+        <ul class="pricing-list">
+          <li>完整企業網站架構</li>
+          <li>客製化視覺與互動效果</li>
+          <li>作品／服務／案例展示</li>
+          <li>SEO 基礎設定</li>
+          <li>響應式與行動版優化</li>
+        </ul>
+
+        <a href="#contact" class="btn btn-primary">
+          開始討論 →
+        </a>
+
+      </div>
+
+
+      <div class="pricing-card">
+
+        <div class="pricing-badge">CUSTOM</div>
+
+        <h3>客製網站／系統</h3>
+
+        <p class="pricing-description">
+          需要會員、資料管理、Dashboard 或其他特殊功能的專案。
+        </p>
+
+        <div class="pricing-price">
+          NT$30,000 <span>起</span>
+        </div>
+
+        <ul class="pricing-list">
+          <li>客製化功能規劃</li>
+          <li>互動式 Web 介面</li>
+          <li>資料與流程設計</li>
+          <li>管理後台／Dashboard</li>
+          <li>依需求評估開發範圍</li>
+        </ul>
+
+        <a href="#contact" class="btn btn-secondary">
+          討論需求 →
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
   <!-- =========================================================
        PROJECTS
   ========================================================= -->
@@ -1934,12 +2161,18 @@
     <div class="section-header">
 
       <div class="tag">
-        SELECTED PROJECTS
+        CONCEPT PROJECTS · SELECTED WORK
       </div>
 
       <h2>
-        我們做過什麼？
+        概念作品｜展示我能做什麼
       </h2>
+
+
+      <p style="color:#666; font-size:13px; margin-top:20px; max-width:680px; line-height:1.8;">
+        ※ 以下皆為概念作品，用於展示網站設計、前端開發與數位產品規劃能力，
+        並非實際客戶案例或營運數據。
+      </p>
 
     </div>
 
@@ -2414,7 +2647,7 @@
         </div>
 
         <div class="stat-label">
-          Concept Projects
+          Concept Projects · 概念作品
         </div>
 
       </div>
