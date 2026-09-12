@@ -1819,6 +1819,56 @@
       }
     }
 
+
+    /* =========================================================
+       VALUE / PROBLEM SOLVING
+    ========================================================= */
+    .value-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
+    .value-card { padding:34px; border:1px solid rgba(255,255,255,.08); border-radius:14px; background:linear-gradient(145deg,rgba(255,255,255,.035),rgba(255,255,255,.008)); transition:.35s; }
+    .value-card:hover { transform:translateY(-6px); border-color:rgba(255,255,255,.18); }
+    .value-index { color:#555; font-size:11px; font-weight:800; letter-spacing:2px; margin-bottom:45px; }
+    .value-card h3 { font-size:25px; margin-bottom:12px; }
+    .value-card p { color:#858585; line-height:1.85; }
+    .value-result { display:inline-block; margin-top:20px; color:#bdbdbd; font-size:13px; }
+
+    /* =========================================================
+       PROCESS
+    ========================================================= */
+    .process-list { border-top:1px solid rgba(255,255,255,.1); }
+    .process-item { display:grid; grid-template-columns:90px 1fr 1.2fr; gap:30px; align-items:center; padding:30px 0; border-bottom:1px solid rgba(255,255,255,.1); }
+    .process-number { color:#555; font-size:13px; font-weight:800; letter-spacing:2px; }
+    .process-item h3 { font-size:23px; }
+    .process-item p { color:#777; line-height:1.8; font-size:14px; }
+
+    /* =========================================================
+       CONTACT FORM
+    ========================================================= */
+    .contact-layout { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:.85fr 1.15fr; gap:70px; text-align:left; align-items:start; }
+    .contact-copy h3 { font-size:30px; margin-bottom:18px; }
+    .contact-copy p { margin:0 0 25px; text-align:left; }
+    .contact-links { display:grid; gap:10px; }
+    .contact-link { display:flex; align-items:center; justify-content:space-between; padding:16px 18px; border:1px solid rgba(255,255,255,.08); border-radius:9px; color:#aaa; transition:.3s; }
+    .contact-link:hover { color:white; border-color:rgba(255,255,255,.2); }
+    .contact-form { padding:28px; border:1px solid rgba(255,255,255,.08); border-radius:14px; background:rgba(255,255,255,.018); }
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    .form-field { margin-bottom:15px; }
+    .form-field label { display:block; color:#777; font-size:11px; letter-spacing:1px; margin-bottom:7px; }
+    .form-field input,.form-field textarea,.form-field select { width:100%; padding:14px 15px; border:1px solid rgba(255,255,255,.1); border-radius:8px; background:#0b0b0b; color:white; outline:none; font:inherit; }
+    .form-field textarea { min-height:125px; resize:vertical; }
+    .form-field input:focus,.form-field textarea:focus,.form-field select:focus { border-color:rgba(255,255,255,.28); }
+    .form-note { margin-top:12px; color:#555; font-size:11px; line-height:1.7; }
+    .concept-note { margin-top:35px; padding:18px 20px; border-left:2px solid rgba(255,255,255,.18); color:#666; font-size:12px; line-height:1.8; }
+    @media (max-width:900px) {
+      .value-grid { grid-template-columns:1fr; }
+      .contact-layout { grid-template-columns:1fr; gap:45px; }
+      .process-item { grid-template-columns:60px 1fr; gap:15px; }
+      .process-item p { grid-column:2; }
+    }
+    @media (max-width:600px) {
+      .form-row { grid-template-columns:1fr; gap:0; }
+      .contact-form { padding:20px; }
+    }
+
   </style>
 </head>
 
@@ -1953,6 +2003,23 @@
   </section>
 
 
+
+
+  <!-- =========================================================
+       VALUE / PROBLEM SOLVING
+  ========================================================= -->
+  <section id="value">
+    <div class="section-header">
+      <div class="tag">WHY NOVATECH</div>
+      <h2>不只是做網站。<br><span style="color:#666;">而是解決問題。</span></h2>
+    </div>
+    <div class="value-grid">
+      <div class="value-card"><div class="value-index">01 · FIRST IMPRESSION</div><h3>網站看起來不夠專業</h3><p>重新整理品牌視覺、資訊層級與使用者動線，讓第一次進站的訪客更快理解你是誰、提供什麼。</p><span class="value-result">品牌網站 → 更清楚的第一印象</span></div>
+      <div class="value-card"><div class="value-index">02 · CONVERSION</div><h3>訪客來了，卻不知道下一步</h3><p>把服務、作品、價格與聯絡方式放進清楚的轉換流程，降低訪客需要思考的成本。</p><span class="value-result">資訊整理 → 更明確的行動入口</span></div>
+      <div class="value-card"><div class="value-index">03 · EFFICIENCY</div><h3>重複工作太多</h3><p>針對報表、資料整理、內容管理等流程，評估是否能透過網站工具或客製系統減少人工操作。</p><span class="value-result">流程數位化 → 減少重複操作</span></div>
+      <div class="value-card"><div class="value-index">04 · AI READY</div><h3>想導入 AI，但不知道從哪開始</h3><p>先從實際工作流程出發，再規劃 AI 搜尋、資料整理、客服或內部工具，而不是為了 AI 而 AI。</p><span class="value-result">AI 導入 → 從實際需求開始</span></div>
+    </div>
+  </section>
 
   <!-- =========================================================
        SERVICES
@@ -2685,40 +2752,53 @@
 
 
 
+
   <!-- =========================================================
-       CONTACT
+       PROCESS
   ========================================================= -->
-
-  <section
-    id="contact"
-    class="contact"
-  >
-
-    <div class="tag">
-      LET'S WORK TOGETHER
+  <section id="process">
+    <div class="section-header">
+      <div class="tag">HOW IT WORKS</div>
+      <h2>合作流程</h2>
     </div>
-
-    <h2>
-      有個想法？<br>
-      <span>讓我們把它做出來。</span>
-    </h2>
-
-    <p>
-      無論是一個品牌網站、數位產品，
-      或是一套企業內部系統，
-      都可以從一次簡單的討論開始。
-    </p>
-
-    <a
-      href="mailto:wayne961021@gmail.com"
-      class="btn btn-primary"
-    >
-      聯絡 NovaTech →
-    </a>
-
+    <div class="process-list">
+      <div class="process-item"><div class="process-number">01</div><h3>需求討論</h3><p>了解品牌、目標、網站用途與功能需求，確認專案方向。</p></div>
+      <div class="process-item"><div class="process-number">02</div><h3>報價與規劃</h3><p>依照需求確認頁面、功能、預估時程與專案費用。</p></div>
+      <div class="process-item"><div class="process-number">03</div><h3>設計與開發</h3><p>建立網站視覺與互動體驗，再進行前端開發與功能整合。</p></div>
+      <div class="process-item"><div class="process-number">04</div><h3>測試與上線</h3><p>檢查手機、桌機、表單與主要功能，確認完成後協助正式上線。</p></div>
+    </div>
   </section>
 
 
+  <!-- =========================================================
+       CONTACT
+  ========================================================= -->
+  <section id="contact" class="contact">
+    <div class="tag">LET'S WORK TOGETHER</div>
+    <h2>有個想法？<br><span>讓我們把它做出來。</span></h2>
+    <div class="contact-layout">
+      <div class="contact-copy">
+        <h3>先聊聊你的需求。</h3>
+        <p>不需要一開始就把所有細節想好。告訴我你想做什麼、目前遇到什麼問題，我會先協助你整理成比較清楚的網站或數位方案。</p>
+        <div class="contact-links">
+          <a class="contact-link" href="mailto:wayne961021@gmail.com"><span>Email</span><span>→</span></a>
+          <a class="contact-link" href="https://line.me/" target="_blank" rel="noopener"><span>LINE 官方入口</span><span>→</span></a>
+        </div>
+        <div class="concept-note">目前 NovaTech 為獨立數位工作室／作品集品牌。網站上的專案皆為概念作品，實際合作會依客戶需求重新規劃。</div>
+      </div>
+      <form class="contact-form" id="contactForm">
+        <div class="form-row">
+          <div class="form-field"><label for="name">姓名／稱呼</label><input id="name" name="name" type="text" placeholder="例如：王先生" required></div>
+          <div class="form-field"><label for="company">公司／品牌</label><input id="company" name="company" type="text" placeholder="例如：ABC Studio"></div>
+        </div>
+        <div class="form-field"><label for="email">Email</label><input id="email" name="email" type="email" placeholder="you@example.com" required></div>
+        <div class="form-field"><label for="budget">預算範圍</label><select id="budget" name="budget"><option value="未確定">還不確定</option><option value="8000-15000">NT$8,000 – 15,000</option><option value="15000-30000">NT$15,000 – 30,000</option><option value="30000+">NT$30,000 以上</option></select></div>
+        <div class="form-field"><label for="message">你想做什麼？</label><textarea id="message" name="message" placeholder="簡單描述你的網站、品牌或系統需求。" required></textarea></div>
+        <button type="submit" class="btn btn-primary">送出需求 →</button>
+        <div class="form-note">這是靜態網站表單。送出後會開啟 Email 郵件程式並自動帶入需求內容，不需要額外後端服務。</div>
+      </form>
+    </div>
+  </section>
 
   <!-- =========================================================
        FOOTER
@@ -2839,6 +2919,31 @@
   ========================================================= -->
 
   <script>
+
+
+    /* =========================================================
+       CONTACT FORM
+    ========================================================= */
+    const contactForm = document.getElementById("contactForm");
+    if (contactForm) {
+      contactForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+        const name = document.getElementById("name").value.trim();
+        const company = document.getElementById("company").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const budget = document.getElementById("budget").value;
+        const message = document.getElementById("message").value.trim();
+        const subject = encodeURIComponent("NovaTech 專案需求｜" + (company || name));
+        const body = encodeURIComponent(
+          "姓名／稱呼：" + name + "\n" +
+          "公司／品牌：" + (company || "未提供") + "\n" +
+          "Email：" + email + "\n" +
+          "預算範圍：" + budget + "\n\n" +
+          "需求描述：\n" + message
+        );
+        window.location.href = "mailto:wayne961021@gmail.com?subject=" + subject + "&body=" + body;
+      });
+    }
 
     const cases = [
 
