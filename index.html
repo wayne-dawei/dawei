@@ -1869,6 +1869,195 @@
       .contact-form { padding:20px; }
     }
 
+  
+    /* =========================================================
+       CASE STUDY UPGRADE
+    ========================================================= */
+
+    .case-cta-note {
+      margin-top: 35px;
+      padding: 22px 24px;
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: #707070;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .case-cta-note span {
+      color: #aaa;
+      font-size: 10px;
+      letter-spacing: 2px;
+      white-space: nowrap;
+    }
+
+    .case-cta-note a {
+      margin-left: auto;
+      color: #ddd;
+      white-space: nowrap;
+    }
+
+    .case-cta-note a:hover {
+      color: white;
+    }
+
+    .modal-context {
+      color: #aaa;
+    }
+
+    .modal-section + .modal-section {
+      margin-top: 32px;
+    }
+
+    @media (max-width: 700px) {
+      .case-cta-note {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .case-cta-note a {
+        margin-left: 0;
+      }
+    }
+
+
+    /* =========================================================
+       PROJECT INQUIRY / QUOTE FORM
+    ========================================================= */
+    .quote-section {
+      background: linear-gradient(180deg, #070707, #0b0b0b);
+    }
+
+    .quote-layout {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .quote-copy h3 {
+      font-size: 32px;
+      line-height: 1.25;
+      margin-bottom: 18px;
+    }
+
+    .quote-copy p {
+      color: #858585;
+      line-height: 1.9;
+      margin-bottom: 28px;
+    }
+
+    .quote-points {
+      display: grid;
+      gap: 12px;
+    }
+
+    .quote-point {
+      padding: 16px 18px;
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 9px;
+      color: #999;
+      font-size: 13px;
+    }
+
+    .quote-point strong {
+      display: block;
+      color: #ddd;
+      margin-bottom: 4px;
+      font-size: 14px;
+    }
+
+    .quote-form {
+      padding: 30px;
+      border: 1px solid rgba(255,255,255,.09);
+      border-radius: 16px;
+      background: rgba(255,255,255,.018);
+    }
+
+    .quote-form-title {
+      margin-bottom: 25px;
+    }
+
+    .quote-form-title h3 {
+      font-size: 25px;
+      margin-bottom: 7px;
+    }
+
+    .quote-form-title p {
+      color: #666;
+      font-size: 12px;
+    }
+
+    .quote-form input,
+    .quote-form textarea,
+    .quote-form select {
+      width: 100%;
+      padding: 14px 15px;
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 8px;
+      background: #0b0b0b;
+      color: white;
+      outline: none;
+      font: inherit;
+    }
+
+    .quote-form input::placeholder,
+    .quote-form textarea::placeholder {
+      color: #505050;
+    }
+
+    .quote-form input:focus,
+    .quote-form textarea:focus,
+    .quote-form select:focus {
+      border-color: rgba(255,255,255,.3);
+    }
+
+    .quote-form textarea {
+      min-height: 145px;
+      resize: vertical;
+    }
+
+    .quote-submit {
+      width: 100%;
+      margin-top: 5px;
+    }
+
+    .quote-note {
+      margin-top: 12px;
+      color: #555;
+      font-size: 11px;
+      line-height: 1.7;
+    }
+
+    .quote-success {
+      display: none;
+      margin-top: 15px;
+      padding: 13px 15px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,.1);
+      color: #aaa;
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 900px) {
+      .quote-layout {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .quote-form {
+        padding: 20px;
+      }
+    }
+
   </style>
 </head>
 
@@ -1902,6 +2091,10 @@
 
       <li>
         <a href="#projects">Projects</a>
+      </li>
+
+      <li>
+        <a href="#quote">需求表</a>
       </li>
 
       <li>
@@ -2030,11 +2223,11 @@
     <div class="section-header">
 
       <div class="tag">
-        WHAT WE DO
+        WHAT I DO
       </div>
 
       <h2>
-        我們能幫你<br>
+        我能幫你<br>
         做什麼？
       </h2>
 
@@ -2253,7 +2446,10 @@
 
       <div
         class="project project-1"
+        tabindex="0"
+        role="button"
         onclick="openCase(0)"
+        onkeydown="if(event.key==='Enter'||event.key===' ')openCase(0)"
       >
 
         <div class="project-visual">
@@ -2358,8 +2554,7 @@
         </h3>
 
         <p class="project-description">
-          Enterprise AI Solution
-        </p>
+          企業 AI 工作平台｜資料搜尋、分析與內部工作流程</p>
 
       </div>
 
@@ -2371,7 +2566,10 @@
 
       <div
         class="project project-2"
+        tabindex="0"
+        role="button"
         onclick="openCase(1)"
+        onkeydown="if(event.key==='Enter'||event.key===' ')openCase(1)"
       >
 
         <div class="project-visual">
@@ -2472,8 +2670,7 @@
         </h3>
 
         <p class="project-description">
-          Digital Finance Experience
-        </p>
+          金融 Dashboard｜資產資訊與數據視覺化</p>
 
       </div>
 
@@ -2485,7 +2682,10 @@
 
       <div
         class="project project-3"
+        tabindex="0"
+        role="button"
         onclick="openCase(2)"
+        onkeydown="if(event.key==='Enter'||event.key===' ')openCase(2)"
       >
 
         <div class="project-visual">
@@ -2613,8 +2813,7 @@
         </h3>
 
         <p class="project-description">
-          Digital Transformation
-        </p>
+          製造管理 Dashboard｜設備、生產與異常資訊整合</p>
 
       </div>
 
@@ -2626,7 +2825,10 @@
 
       <div
         class="project project-4"
+        tabindex="0"
+        role="button"
         onclick="openCase(3)"
+        onkeydown="if(event.key==='Enter'||event.key===' ')openCase(3)"
       >
 
         <div class="project-visual">
@@ -2686,8 +2888,7 @@
         </h3>
 
         <p class="project-description">
-          Premium Brand Experience
-        </p>
+          品牌形象網站｜高端視覺與產品展示體驗</p>
 
       </div>
 
@@ -2767,6 +2968,180 @@
       <div class="process-item"><div class="process-number">03</div><h3>設計與開發</h3><p>建立網站視覺與互動體驗，再進行前端開發與功能整合。</p></div>
       <div class="process-item"><div class="process-number">04</div><h3>測試與上線</h3><p>檢查手機、桌機、表單與主要功能，確認完成後協助正式上線。</p></div>
     </div>
+  </section>
+
+
+
+  <!-- =========================================================
+       PROJECT INQUIRY / QUOTE
+  ========================================================= -->
+
+  <section id="quote" class="quote-section">
+
+    <div class="section-header">
+      <div class="tag">PROJECT INQUIRY</div>
+
+      <h2>
+        先告訴我需求。<br>
+        <span style="color:#666;">我再幫你評估。</span>
+      </h2>
+
+      <p style="color:#666; font-size:13px; margin-top:20px; max-width:700px; line-height:1.8;">
+        不確定該選哪個方案也沒關係。填寫下面的需求表，
+        我會依照網站規模、功能與開發複雜度進一步評估。
+      </p>
+    </div>
+
+    <div class="quote-layout">
+
+      <div class="quote-copy">
+
+        <h3>不用先懂技術，<br>把你想做的事情告訴我。</h3>
+
+        <p>
+          這份表單不是正式報價單，而是讓我快速了解你的專案。
+          收到需求後，可以再一起確認功能、範圍與預算。
+        </p>
+
+        <div class="quote-points">
+
+          <div class="quote-point">
+            <strong>01 · 先了解需求</strong>
+            先釐清你想解決的問題與網站目的。
+          </div>
+
+          <div class="quote-point">
+            <strong>02 · 評估開發範圍</strong>
+            根據頁面、功能、設計與第三方服務評估複雜度。
+          </div>
+
+          <div class="quote-point">
+            <strong>03 · 再討論預算</strong>
+            起始價格只是參考，實際專案會依需求報價。
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <form class="quote-form" id="quoteForm">
+
+        <div class="quote-form-title">
+          <h3>網站需求表</h3>
+          <p>約 1–2 分鐘即可完成。</p>
+        </div>
+
+        <div class="form-row">
+
+          <div class="form-field">
+            <label for="quoteName">姓名／稱呼 *</label>
+            <input id="quoteName" type="text" placeholder="例如：王先生" required>
+          </div>
+
+          <div class="form-field">
+            <label for="quoteCompany">公司／品牌</label>
+            <input id="quoteCompany" type="text" placeholder="沒有也可以留白">
+          </div>
+
+        </div>
+
+        <div class="form-row">
+
+          <div class="form-field">
+            <label for="quoteEmail">Email *</label>
+            <input id="quoteEmail" type="email" placeholder="your@email.com" required>
+          </div>
+
+          <div class="form-field">
+            <label for="quoteType">專案類型 *</label>
+            <select id="quoteType" required>
+              <option value="">請選擇</option>
+              <option>企業／品牌網站</option>
+              <option>個人／作品集網站</option>
+              <option>電商網站</option>
+              <option>Web App／Dashboard</option>
+              <option>客製網站／管理系統</option>
+              <option>其他</option>
+            </select>
+          </div>
+
+        </div>
+
+        <div class="form-row">
+
+          <div class="form-field">
+            <label for="quoteBudget">預算範圍</label>
+            <select id="quoteBudget">
+              <option value="">尚未確定</option>
+              <option>NT$8,000 以下</option>
+              <option>NT$8,000–15,000</option>
+              <option>NT$15,000–30,000</option>
+              <option>NT$30,000–50,000</option>
+              <option>NT$50,000 以上</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="quotePages">預計頁面數</label>
+            <select id="quotePages">
+              <option value="">尚未確定</option>
+              <option>單頁 Landing Page</option>
+              <option>2–5 頁</option>
+              <option>6–10 頁</option>
+              <option>10 頁以上</option>
+              <option>不確定，希望協助規劃</option>
+            </select>
+          </div>
+
+        </div>
+
+        <div class="form-row">
+
+          <div class="form-field">
+            <label for="quoteTimeline">預計上線時間</label>
+            <select id="quoteTimeline">
+              <option value="">尚未確定</option>
+              <option>2 週內</option>
+              <option>1 個月內</option>
+              <option>1–2 個月</option>
+              <option>2 個月以上</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="quoteContact">方便聯絡方式</label>
+            <input id="quoteContact" type="text" placeholder="例如：LINE ID">
+          </div>
+
+        </div>
+
+        <div class="form-field">
+          <label for="quoteMessage">需求描述 *</label>
+          <textarea
+            id="quoteMessage"
+            placeholder="例如：想做一個公司官網，希望有首頁、服務介紹、案例展示與聯絡表單……"
+            required
+          ></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary quote-submit">
+          送出專案需求 →
+        </button>
+
+        <div class="quote-success" id="quoteSuccess">
+          已整理好你的需求。接下來會開啟 Email，確認後即可寄出。
+        </div>
+
+        <div class="quote-note">
+          ※ 這是純前端表單，不會把資料儲存在網站伺服器。
+          按下送出後會使用你的 Email 程式建立需求信。
+        </div>
+
+      </form>
+
+    </div>
+
   </section>
 
 
@@ -2946,122 +3321,97 @@
     }
 
     const cases = [
-
       {
-        category: "TECHNOLOGY",
-
+        category: "TECHNOLOGY · CONCEPT PROJECT",
         title: "AI 智慧平台",
-
+        context:
+          "概念：企業希望把分散的資料、AI 工具與分析流程集中在一個容易使用的工作介面。",
         intro:
           "為企業打造現代化 AI 工作平台，讓複雜的資料與 AI 功能能夠透過簡潔的介面被快速使用。",
-
         goal:
           "降低企業使用 AI 工具的門檻，讓管理者與員工能夠更快速地取得資訊與分析結果。",
-
         strategy:
-          "採用深色科技風格搭配清楚的資訊層級，將重要數據集中在 Dashboard，讓使用者能快速掌握系統狀態。",
-
+          "以 Dashboard 作為主要入口，將重要資訊、AI 功能與工作狀態分層呈現，讓使用者先看懂，再進一步操作。",
         features: [
           "AI Dashboard",
-          "資料分析",
-          "即時數據",
+          "資料搜尋與分析",
+          "工作流程入口",
           "權限管理"
         ],
-
         tech:
-          "HTML / CSS / JavaScript / Dashboard UI",
-
+          "HTML / CSS / JavaScript / Dashboard UI / AI Workflow Concept",
         visualClass:
           "ai-modal"
       },
 
-
       {
-        category: "FINTECH",
-
+        category: "FINTECH · CONCEPT PROJECT",
         title: "金融科技平台",
-
+        context:
+          "概念：金融資訊通常包含大量數字與圖表，需要更清楚的資訊架構才能降低閱讀門檻。",
         intro:
           "重新設計金融服務的數位體驗，讓使用者可以更直覺地理解自己的資產與數據。",
-
         goal:
           "降低金融資訊的閱讀門檻，讓複雜的數據透過視覺化方式變得更容易理解。",
-
         strategy:
-          "使用極簡介面與資訊層級，將最重要的財務數據放在第一視覺層級。",
-
+          "把資產總覽、趨勢與交易資訊建立清楚的視覺層級，讓重要資訊在第一時間被看見。",
         features: [
           "Financial Dashboard",
           "資產總覽",
           "數據圖表",
-          "帳戶管理"
+          "帳戶資訊"
         ],
-
         tech:
-          "HTML / CSS / JavaScript / Data Visualization",
-
+          "HTML / CSS / JavaScript / Data Visualization Concept",
         visualClass:
           "finance-modal"
       },
 
-
       {
-        category: "SMART INDUSTRY",
-
+        category: "SMART INDUSTRY · CONCEPT PROJECT",
         title: "智慧製造",
-
+        context:
+          "概念：製造現場會產生大量設備與生產資訊，需要集中化介面協助管理者快速掌握狀態。",
         intro:
           "協助製造業建立數位化管理介面，將生產資訊集中到單一平台。",
-
         goal:
           "讓管理者可以快速了解設備與生產狀態，降低人工整理資料的成本。",
-
         strategy:
           "使用清楚的數據卡片、設備狀態與視覺化資訊，讓大量工業資料保持容易閱讀。",
-
         features: [
           "Production Dashboard",
-          "設備監控",
+          "設備狀態監控",
           "生產數據",
           "異常通知"
         ],
-
         tech:
-          "HTML / CSS / JavaScript / Dashboard System",
-
+          "HTML / CSS / JavaScript / Dashboard System Concept",
         visualClass:
           "factory-modal"
       },
 
-
       {
-        category: "BRANDING",
-
+        category: "BRANDING · CONCEPT PROJECT",
         title: "高端品牌網站",
-
+        context:
+          "概念：品牌需要一個能建立第一印象、呈現產品價值並引導訪客深入了解的數位入口。",
         intro:
           "打造具有高端品牌感的企業網站，透過影像、文字與留白建立完整品牌體驗。",
-
         goal:
           "提升品牌在線上的第一印象，並讓訪客更容易理解品牌價值。",
-
         strategy:
           "大量使用留白、極簡排版與高對比文字，建立高級且具有辨識度的視覺風格。",
-
         features: [
           "Brand Story",
           "產品展示",
           "品牌介紹",
           "Responsive Design"
         ],
-
         tech:
           "HTML / CSS / JavaScript / Responsive Web Design",
-
         visualClass:
           "brand-modal"
       }
-
     ];
 
 
@@ -3081,6 +3431,9 @@
 
       document.getElementById("modalIntro").textContent =
         data.intro;
+
+      document.getElementById("modalContext").textContent =
+        data.context;
 
       document.getElementById("modalGoal").textContent =
         data.goal;
@@ -3257,6 +3610,63 @@
     }
 
   </script>
+
+
+    /* =========================================================
+       PROJECT INQUIRY FORM
+    ========================================================= */
+
+    const quoteForm = document.getElementById("quoteForm");
+
+    if (quoteForm) {
+      quoteForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const name = document.getElementById("quoteName").value.trim();
+        const company = document.getElementById("quoteCompany").value.trim();
+        const email = document.getElementById("quoteEmail").value.trim();
+        const type = document.getElementById("quoteType").value;
+        const budget = document.getElementById("quoteBudget").value;
+        const pages = document.getElementById("quotePages").value;
+        const timeline = document.getElementById("quoteTimeline").value;
+        const contact = document.getElementById("quoteContact").value.trim();
+        const message = document.getElementById("quoteMessage").value.trim();
+
+        const subject =
+          "NovaTech 專案需求｜" + (company || name);
+
+        const body =
+`您好，我想詢問 NovaTech 的網站／數位專案。
+
+【基本資料】
+姓名／稱呼：${name}
+公司／品牌：${company || "未提供"}
+Email：${email}
+方便聯絡方式：${contact || "未提供"}
+
+【專案資訊】
+專案類型：${type}
+預算範圍：${budget || "尚未確定"}
+預計頁面數：${pages || "尚未確定"}
+預計上線時間：${timeline || "尚未確定"}
+
+【需求描述】
+${message}
+
+---
+此需求由 NovaTech 網站需求表建立。`;
+
+        const mailto =
+          "mailto:wayne961021@gmail.com" +
+          "?subject=" + encodeURIComponent(subject) +
+          "&body=" + encodeURIComponent(body);
+
+        const success = document.getElementById("quoteSuccess");
+        success.style.display = "block";
+
+        window.location.href = mailto;
+      });
+    }
 
 </body>
 </html>
